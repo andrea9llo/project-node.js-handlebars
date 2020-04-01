@@ -1,0 +1,22 @@
+<h2 class="my-5">Lista note </h2>
+{{#each note}}
+
+  <div class="card card-body">
+    <h3>{{title}}</h3>
+    <p>{{body}}</p>
+    <div>
+      <a class="btn btn-success mb-2" href="/modifica_nota/{{id}}">Modifica</a>
+      <form  action="/lista_note/{{id}}?_method=DELETE" method="post">
+        <input type="hidden" name="_method" value="DELETE">
+        <input class="btn btn-success" type="submit" name="" value="Elimina">
+
+
+      </form>
+    </div>
+  </div>
+  {{else}}
+  <div class="card card-body">
+    <h4>Non ci sono note</h4>
+  </div>
+
+{{/each}}
